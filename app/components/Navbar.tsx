@@ -2,7 +2,9 @@ export default function Navbar(){
     const menu=["New & Featured", "Men", "Women", "Kids","Jordan","Sale"]
     return(
       <div className="flex justify-between px-12 h-[60px] items-center">
-        <img className="size-20" src="" alt="" />
+       
+        {/* logo */}
+        <img className="size-20" src="logo.svg" alt="" />
         <nav className="flex h-[60px] items-center justify-center">
             { menu.map((item,index)=>(
                 <div className="px-3 font-semibold">

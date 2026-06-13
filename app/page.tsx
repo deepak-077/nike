@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Category from "./components/Category";
+import Things from "./components/Things";
 
 export default function Home() {
 
@@ -14,6 +15,7 @@ export default function Home() {
       </div>
       <Navbar/>
       <Category/>
+      <Things/>
 
       
 
