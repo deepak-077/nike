@@ -1,4 +1,4 @@
-
+import Sidebar from "./Sidebar"
 
 const shoes=[
   {
@@ -34,7 +34,7 @@ const shoes=[
     img:"air jordan1.jpg",
     name:"Air Jordan 1 Low",
     type:"Nike Air Jordan 1 Low Men's Shoes",
-    colours:["bg-blue","bg-grey"],
+    colours:["bg-blue-900","bg-gray-500"],
     price:"8,995"
   },
   {
@@ -62,25 +62,27 @@ const shoes=[
     img:"air jordan1 low.jpg",
     name:"Air Jordan 1 Low",
     type:"Nike Air Jordan 1 Low Men's Shoes",
-    colours:["bg-brown","bg-blue"],
+    colours:["bg-brown","bg-blue-900"],
     price:"8,995"
   },
 
 ]
 
-
 export default function Things(){
     
     return(
-      <div className="flex justify-between items-center py-6 h-auto">
+      <div className="flex justify-between items-center py-6 h-auto ">
 
+        {/* sidebar */}
+        <Sidebar/>
+        
 
         {/* things */}
         <div className="pr-12 pl-10 h-auto">
-          <div className=" grid grid-cols-3 w-[1122px] h-[478px] gap-3.5 mb-12">
+          <div className=" grid grid-cols-3 w-[1122px] h-auto gap-3.5 ">
 
             {shoes.map((item,index)=>(
-            <div key={index} className="w-[366px] h-[452px]">
+            <div key={index} className="w-[366px] h-[452px] mb-12">
             
                 {/* image */}
                 <img className="size-[366px]" src={item.img} alt="" />
@@ -91,12 +93,15 @@ export default function Things(){
                   <div className="h-6 font-semibold">{item.name}</div>
                   <div className="h-6">{item.type}</div>
 
-                  <div className="h-4 mt-1">
-                  {item.colours.map((color)=>(
-                      <div className={`size-4 rounded-full bg-${color}`}></div>
-                  ))}
-                  </div>
-
+                  
+                  {item.colours && item.colours.length>0 && (
+                    <div className={`flex gap-1.5 h-4 mt-1}`  }>
+                      {item.colours.map((color)=>(
+                        <div className={`size-4 rounded-full border border-gray-400 ${color}`}></div>
+                      ))}
+                    </div>
+                  )}
+                  
                   <div className="h-6 font-semibold" mt-2>{item.price}</div>
                 </div>
             </div>
