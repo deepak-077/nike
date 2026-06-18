@@ -40,7 +40,7 @@ export default function Airmax3(){
             <div className="flex w-[687px] h-[535px] pl-12 mr-4 ml-2">
                 
                 {/* small images */}
-                <div className="flex flex-col w-15 h-auto pl-12 mr-4 ml-2">
+                <div className="flex flex-col w-15 h-auto gap-0.5 overflow-y-auto ">
                 {images.map((item,index)=>(
                     <div className=" flex items-center size-15 mb-1">
                         <img className="size-15 rounded-md" src={`/airmax/${item.img}`} onClick={()=>{
@@ -60,58 +60,60 @@ export default function Airmax3(){
             </div>
 
 
+
+
             {/* product info */}
             <div className="w-100 h-[1285px] pl-10">
                 <div className="w-[360px] h-[1285px] pr-2.5 pb-6">
-                    <section className="w-[350px] h-[476px]">
-                        
-                        <div className="w-full h-5" mb-1>
+                    <section className="flex flex-col gap-3 w-[350px] h-[476px]">
+
+                        <h1 className="w-full h-[52px]">
+                            <div className="w-full h-6 mb-1 font-semibold text-[20px]">
                             Nike Air Max Plus 3
                         </div>
-                        <div className="w-full h-6" mb-1>
+                        <div className="w-full h-6 mb-1 text-[#707072]" >
                             Men's Shoes
                         </div>
 
+                        </h1>
+                        
+                        
                         {/* price */}
-                        <div className="w-full h-[53px]" mt-2>
-                            <div className="w-full h-6 mb-2">
+                        <div className="w-full h-[53px] mt-2" >
+                            <div className="w-full h-6 mb-2 font-semibold">
                                 17,495
                             </div>
-                            <span>Inclusive of all taxes</span>
+                            <span className="text-[#707072] text-sm h-5">Inclusive of all taxes</span>
                             
                         </div>
-                        <div className="w-full h-[137px]" mt-6>
+                        <div className="w-full h-[137px]  mt-6">
                             {/* select size */}
-                            <div className="w-full h-[26px]">
+                            <div className="flex justify-between w-full h-[26px] font-semibold">
                                 <h2>Select Size</h2>
-                                <div className="h-[24px]">
+                                <div className="flex items-center gap-1 h-[24px]">
                                     <img className="size-6" src="" alt="" />
-                                    <span>Size Guide</span>
+                                    <span className="text-sm">Size Guide</span>
                                 </div>
-
                             </div>
 
                             {/* sizes */}
-                            <div className="flex flex-wrap items-center w-[350px] h-[103px] mt-2">
+                            <div className="flex flex-wrap justify-between items-center w-[350px] h-[103px] mt-2">
                                 {sizes.map((item,index)=>(
-                                    <label className="w-[82.25] h-[48px] px-2 text-center">{item.size}</label>
+                                    <label className="border border-[#CACACB] rounded-lg w-[82.25] h-[48px] px-2 text-center">{item.size}</label>
                                 ))}
                             </div>
+                        </div>
 
-                            {/* add to bag */}
+                        {/* add to bag */}
                             <div className="w-[350px] h-[130px]">
-                                <button className="w-full h-[60px] mb-3 py-1">Add to Bag</button>
+                                <button className="bg-black text-white rounded-4xl font-semibold w-full h-[60px] mb-3 py-1">Add to Bag</button>
                                 
-                                <div className="w-[350px] h-[58px]">
-                                    <span className="h-6">Favourite</span>
+                                <div className="flex gap-1 items-center justify-center rounded-4xl w-[350px] h-[58px] border border-[#00132529]">
+                                    <span className="h-6 font-semibold">Favourite</span>
                                     <img className="size-6" src="" alt="" />
                                 </div>
 
                             </div>
-
-                            
-                        </div>
-
                     </section>
 
                     {/* extra info */}
@@ -120,21 +122,21 @@ export default function Airmax3(){
                                     The Nike Air Max Plus 3 updates an iconic design with TPU accents on the upper for a modern look that still pays homage to the OG. Thanks to its Tuned Air technology, it offers the unreal comfort that helped the Air Max Plus make its name.
 
                                 </div>
-                                <li>Colour Shown: White|Vast Grey</li>
-                                <li>Style: CW1417-100</li>
+                                <li className="ml-[27px]">Colour Shown: White|Vast Grey</li>
+                                <li className="ml-[27px]">Style: CW1417-100</li>
 
                             </div>
 
                             {/* view product details */}
                             <div className="w-[350px] h-[25.5px] mt-[30px] mb-6">
-                                <button className="h-[25.5px]">View Product Details</button>
+                                <button className="h-[25.5px] font-semibold"> <u>View Product Details</u></button>
                             </div>
 
                             
                             {/* delivery details */}
                             <div className="w-[350px] h-[240px] mt-[40px] mb-4">
 
-                                <div className="w-[350px] h-[24px]">
+                                <div className="w-[350px] h-[24px] font-semibold">
                                 Check delivery date
                                 </div>
 
@@ -142,47 +144,54 @@ export default function Airmax3(){
                             <div className="w-[350px] h-[46px] mt-[2px] mb-4">
                                 Enter pincode to know exact delivery dates/charges
                             </div>
-                            <div className="w-[350px] h-[48px]">
-                                <input type="number" name="pincode" id="" />
-                                <span>Check</span>
+                            <div className="flex justify-between items-center w-[350px] h-[48px] border rounded-lg">
+                                <input className="text-[#363638] ml-3" type="number" name="pincode" placeholder="Pincode" id="" />
+                                <span className="text-sm text-[#cacacb] mr-3">Check</span>
                             </div>
 
                             {/* return and exchange */}
-                            <div className="flex items-center justify-end w-[350px] h-[40px] py-2">
-                                <img className="size-6" src="/airmax/return.png" alt="" />
-                                <div className="h-[21px] ml-3">14-day return and size exchange</div>
+                            <div className="flex items-center justify-between w-[350px] h-[40px] py-2 text-sm">
+                                
+                                <div className="flex items-center">
+                                    <img className="size-6" src="/airmax/return.png" alt="" />
+                                    <div className="h-[21px] ml-3">14-day return and size exchange</div>
+                                </div>
+                                
                                 <div className="h-[21px]"><u>Know More</u></div>
 
                             </div>
 
-                            <div className="flex items-center justify-end w-[350px] h-[40px] py-2">
-                                <img className="size-6" src="/airmax/shipping.png" alt="" />
-                                <div className="h-[21px] ml-3">Free delivery available</div>
+                            <div className="flex items-center justify-between w-[350px] h-[40px] py-2 text-sm">
+
+                                <div className="flex items-center">
+                                    <img className="size-6" src="/airmax/shipping.png" alt="" />
+                                    <div className="h-[21px] ml-3">Free delivery available</div>
+                                </div>
+                                
                                 <div className="h-[21px]"><u>Know More</u></div>
 
                             </div>
                             </div>
 
                             {/* vendor details */}
-                            <button className="w-[350px] h-[88px]">
-                                <div className="w-[326px] h-[88px] py-[30px]">
-                                    <h3>Vendor Details</h3>
+                            <button className="flex justify-between items-center w-[350px] h-[88px]">
+                                <div className=" h-[88px] py-[30px] text-[20px] font-medium">
+                                    <h3 className="pb-0.5 h-[26px]">Vendor Details</h3>
                                 </div>
 
                                 {/* expand arrow */}
-                                <img className="size-6" src="" alt="" />
+                                <img className="size-6" src="arrow_down.png" alt="" />
                             </button>
 
                             {/* REturn Policy */}
-                            <button className="w-[350px] h-[88px]">
-                                <div className="w-[326px] h-[88px] py-[30px]">
-                                    <h3>Return and exchange policy</h3>
+                            <button className="flex justify-between items-center w-[350px] h-[88px]">
+                                <div className="h-[88px] py-[30px] text-[20px] font-medium">
+                                    <h3 className="pb-0.5 h-[26px]">Return and exchange policy</h3>
                                 </div>
 
                                 {/* expand arrow */}
-                                <img className="size-6" src="" alt="" />
+                                <img className="size-6" src="arrow_down.png" alt="" />
                             </button>
-
 
                 </div>
 
