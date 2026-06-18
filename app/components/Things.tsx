@@ -1,12 +1,13 @@
 import Sidebar from "./Sidebar"
 
 const shoes=[
+  
   {
-    img:"downshifter.jpg",
-    name:"Nike Downshifter 14",
-    type:"Men's Road Running Shoe",
-    colours:["bg-black","bg-white"],
-    price:"4,895"
+    img:"air max plus 3.jpg",
+    name:"Nike Air Max Plus 3",
+    type:"Men's Shoes",
+    colours:["bg-[#663300]","bg-blue-900"],
+    price:"17,495"
   },
   {
     img:"pegasus.jpg",
@@ -20,7 +21,7 @@ const shoes=[
     img:"quest6.jpg",
     name:"Nike Quest 6",
     type:"Men's Road Running Shoe",
-    colours:["bg-black","bg-white","bg-brown"],
+    colours:["bg-black","bg-white","bg-[#663300]"],
     price:"4,895"
   },
   {
@@ -48,24 +49,46 @@ const shoes=[
     img:"calm.jpg",
     name:"Nike Calm 2.0",
     type:"Men's Slides",
-    colours:["bg-black","bg-brown"],
+    colours:["bg-black","bg-[#663300]"],
     price:"3,895"
   },
   {
-    img:"t90 sp.jpg",
-    name:"Nike T90 SP",
+    img:"airforce 1.jpg",
+    name:"Nike Air Force 1 '07",
     type:"Men's Shoes",
-    colours:[],
+    colours:["bg-[#808080]","bg-[#663300]"],
     price:"9,695"
   },
   {
-    img:"air jordan1 low.jpg",
-    name:"Air Jordan 1 Low",
-    type:"Nike Air Jordan 1 Low Men's Shoes",
-    colours:["bg-brown","bg-blue-900"],
-    price:"8,995"
+    img:"downshifter.jpg",
+    name:"Nike Downshifter 14",
+    type:"Men's Road Running Shoe",
+    colours:["bg-black","bg-white"],
+    price:"4,895"
   },
-
+  
+  
+  {
+    img:"AIR max plus 8.jpg",
+    name:"Nike Air Max Plus VII",
+    type:"Men's Shoes",
+    colours:["bg-[#FF0000]","bg-[#000000]"],
+    price:"13,595"
+  },
+  {
+    img:"metcon7.jpg",
+    name:"Nike Free Metcon 7",
+    type:"Men's Training Shoes",
+    colours:["bg-[#FFFFFF]","bg-[#000000]","bg-[#808080]"],
+    price:"11,295"
+  },
+  {
+    img:"zoom blazer.jpg",
+    name:"Nike SB Zoom Blazer Low Pro GT",
+    type:"Skate Shoes",
+    colours:["bg-[#FFFFFF]","bg-[#000000]"],
+    price:"6,795"
+  },
 ]
 
 export default function Things(){
