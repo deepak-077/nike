@@ -1,5 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
+import More from "../components/More"
+import Recent from "../components/Recent"
 
 const images=[
     {img:"shoe1.jpg"},
@@ -34,7 +36,10 @@ export default function Airmax3(){
     }
 
     return(
-        <div className="flex justify-center w-[1470px] h-[1380px] p-12">
+        <div>
+
+            {/* shoe */}
+            <div className="flex justify-center w-[1470px] h-[1380px] p-12">
 
             {/* shoe images */}
             <div className="flex w-[687px] h-[535px] pl-12 mr-4 ml-2">
@@ -197,9 +202,14 @@ export default function Airmax3(){
 
             </div>
 
-           
+            </div>
+
+            {/* related Items */}
+            <More/>
+            <Recent/>
 
         </div>
+        
 
     )
 }
