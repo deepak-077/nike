@@ -1,9 +1,11 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation";
 
 export default function Checkout(){
     const [counter,setCounter] = useState(1)
+    const router = useRouter();
 
     function increase(){
         setCounter(counter+1);
@@ -13,8 +15,13 @@ export default function Checkout(){
         if(counter>0){
             setCounter(counter-1);
         }
-        
     }
+    useEffect(()=>{
+        if(counter===0){
+            router.push("/checkout/empty");
+        }
+        
+    },[counter,router])
 
     return(
         <div className="flex justify-center items-center w-[1470px] h-[500px]">
