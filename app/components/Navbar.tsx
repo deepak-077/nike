@@ -18,8 +18,12 @@ export default function Navbar(){
         <div className="flex items-center w-[344px] h-[60px]">
 
             <div className="w-[180px] h-[36px]">Search</div>
-            <div className="size-9 mx-0.5">wish</div>
-            <div className="size-9 mx-0.5">Cart</div>
+            <div className="flex items-center justify-center size-9 mx-0.5">
+                <img className="size-6" src="heart.png" alt="" />
+            </div>
+            <div className="flex items-center justify-center size-9 mx-0.5">
+                <img className="size-6" src="cart.png" alt="" />
+            </div>
 
         </div>
       </div>

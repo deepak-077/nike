@@ -68,7 +68,7 @@ export default function Recent(){
                   <div className="h-6 font-semibold">{item.name}</div>
                   <div className="h-6">{item.type}</div>
 
-                  
+
                   {item.colours && item.colours.length>0 && (
                     <div className={`flex gap-1.5 h-4 mt-1}`  }>
                       {item.colours.map((color)=>(
