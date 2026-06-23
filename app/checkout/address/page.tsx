@@ -13,6 +13,18 @@ export default function Address(){
 
     ]
 
+    const addressInfo=[
+        {title:"Pincode"},
+        {title:"House/ Flat/ Office No."},
+        {title:"Road Name/ Area/ Colony"},
+    ]
+
+    const contactInfo=[
+        {title:"Name"},
+        {title:"Phone"},
+        {title:"Email id"},
+    ]
+
     return(
         <div className="flex flex-col items-center justify-center">
             {/* navbar */}
@@ -64,12 +76,9 @@ export default function Address(){
                         <div className="flex flex-col justify-center items-center w-[366px] h-[148px] mb-[14px] p-6">
                             <img className="size-6" src="/plus.png" alt="" />
                             <p className="font-semibold">Add New Address</p>
-
-
                         </div>
 
                     </div>
-
                 </div>
 
                 {/* Bag details */}
@@ -101,9 +110,59 @@ export default function Address(){
                             </div>
 
                         </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            {/* address sidebar */}
+
+            <div className="flex flex-col h-screen w-[400px] ">
+
+                <div className="flex w-[400px] h-[57px]">
+                    <img className="size-6" src="" alt="" />
+                    <p className="h-6 text-[20px]">Add New Address</p>
+
+                </div>
+
+                <div className="w-[322px] h-[822px]">
+                    <div className="w-[322px] h-[24px] my-6"> Address </div>
+                    <div className="flex flex-col justify-around w-[322px] h-[324px] text-[#707072]">
+                        {addressInfo.map((item,index)=>
+
+                            item.title==="Road Name/ Area/ Colony"? (
+                            <textarea className="w-[322px] h-[128px] py-[15px] px-[12px] border rounded-xl" name="" id="">{item.title}</textarea>
+                            ) : (
+                            <input className="w-[322px] h-[56px] py-[15px] px-[12px] border rounded-xl" type="text" placeholder={item.title} />
+                            )    
+                        )}
+                    </div>
+
+                    <div className="w-[322px] h-[24px] my-4">
+                        <p>Use as default Address</p>
+                        
+                        {/* toggle button */}
+                        <span></span>
 
                     </div>
 
+                    <div className="w-[322px] h-[24px] mt-6 mb-1"> Contact </div>
+                    <p className="w-[322px] h-auto text-sm"> Information provided here will be used to contact you for delivery updates </p>
+
+                    <div className="flex flex-col justify-around w-[322px] h-[252px] text-[#707072]">
+                        {contactInfo.map((item,index)=>(
+                            <input className="w-[322px] h-[56px] py-[15px] px-[12px] border rounded-xl" type="text" placeholder={item.title} />
+                        ))}
+                    </div>
+
+                </div>
+
+                {/* ship button */}
+                <div className="w-[392px] h-[82px] py-4 px-9">
+                    <button className="w-[320px] h-[50px] p-3 bg-black text-white rounded-full">Ship to this Address</button>
 
                 </div>
 
