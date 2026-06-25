@@ -134,14 +134,16 @@ export default function Checkout(){
                         </div>
                     </div>
 
+
+                    {/* coupon */}
+
                     <div className="flex justify-between items-center w-[330px] h-[82px] mt-2 mx-3 mb-6">
                         <img className="size-6" src="coupon.png" alt="" />
                         <div className="w-[270px] h-[48px]">
                             <h2 className="h-6 font-semibold"> Log in to apply promo code </h2>
                             <p className="h-[22px] mt-0.5"> Get instant savings on your order </p>
-
-                            
                         </div>
+                        
                         <img className="size-6"  src="right.png" alt="" />
 
                     </div>

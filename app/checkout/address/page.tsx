@@ -14,6 +14,14 @@ export default function Address(){
         }
 
     ]
+    const cards=[
+        {title: "Bag",
+         info: "1 Items"
+        },
+        {title: "Price Details",
+         info: "1 Items"
+        }
+    ]
 
     const addressInfo=[
         {title:"Pincode"},
@@ -69,15 +77,52 @@ export default function Address(){
 
             </div>
 
-            <div className="flex justify-between w-[1102px] h-[196px]">
+            <div className="flex justify-between w-[1102px] h-[274px]">
                 
                 {/* Add address */}
-                <div className="w-[748px] h-[196px]">
-                    <div className="w-[748px] h-[162px] mt-[24px]">
+                <div className="w-[748px] h-[274px]">
+                    <div className="flex w-[748px] h-[250px] mt-[24px]">
                         {/* address box */}
-                        <div className="flex flex-col justify-center items-center w-[366px] h-[148px] mb-[14px] p-6">
+                        <div className="flex flex-col justify-center items-center w-[366px] h-[236px] mb-[14px] p-6">
                             <img className="size-6" src="/plus.png" alt="" />
                             <p className="font-semibold">Add New Address</p>
+                        </div>
+
+                        {/* Saved Address */}
+                        <div className="flex flex-col w-[366px] h-[236px] mb-[14px] p-6 text-[#707072] border border-[#E5E5E5] rounded-2xl">
+                            {/* name */}
+                            <div className="flex h-[26px]">
+                                <p className="font-semibold text-black">Name</p>
+                                <div className="pl-2">
+                                    <div className="flex justify-center items-center h-[26px] px-2 py-1 bg-[#E7EDFF] rounded-full">
+                                        <span className="h-[18px] text-[#1151ff] text-[12px]">DEFAULT</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {/* address */}
+                            <div className="h-[156px] mt-1 pb-15">
+                                <p className="h-[48px] overflow-hidden line-clamp-2"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cupiditate.</p>
+                                <p className="h-[24px]">CITY - Pin</p>
+                                <p className="h-[24px]">XXXX7739</p>
+
+
+                                {/* buttons */}
+                            <div className="flex font-semibold mt-2.5">
+                                <div className="h-[48px] pr-3 text-black">
+                                    <button className="rounded-full border py-[11px] px-[21px]">Edit</button>
+                                </div>
+
+                                <div className="h-[48px] pr-3">
+                                    <button className="rounded-full border py-[11px] px-[21px] bg-black text-white">Deliver here</button>
+                                </div>
+
+                            </div>
+                            </div>
+
+                            
+
                         </div>
 
                     </div>
@@ -87,12 +132,14 @@ export default function Address(){
                 <div className="w-80 h-[196px] pt-6">
                     <div className="w-80 h-[172px]">
                         
-                        {/* Bag */}
-                        <div className="flex justify-between w-[318px] h-14 py-4">
-                            <p className="text-[20px] font-semibold">Bag</p>
+                        {/* Bag, Address and Price info cards */}
+
+                        {cards.map((item,index)=>(
+                            <div className="flex justify-between w-[318px] h-14 py-4 border border-[#E5E5E5] rounded-2xl border-collapse">
+                            <p className="pl-4 text-[20px] font-medium">{item.title}</p>
                             
                             <div className="flex">
-                                <p className="text-[#707072]">1 Items</p>
+                                <p className="text-[#707072]">{item.info}</p>
                                 <span className="w-[52px] h-[24px] pl-3 pr-4">
                                     <img className="size-6 rotate-90" src="/right.png" alt="" />
                                 </span>
@@ -100,18 +147,7 @@ export default function Address(){
 
                         </div>
 
-                        {/* Price details */}
-                        <div className="flex justify-between w-[318px] h-14 py-4">
-                            <p className="text-[20px] font-semibold">Price Details</p>
-                            
-                            <div className="flex">
-                                <p className="text-[#707072]">1 Items</p>
-                                <span className="w-[52px] h-[24px] pl-3 pr-4">
-                                    <img className="size-6 rotate-90" src="/right.png" alt="" />
-                                </span>
-                            </div>
-
-                        </div>
+                        ))}
                     </div>
 
                 </div>
