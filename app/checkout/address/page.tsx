@@ -1,3 +1,5 @@
+// no navbar and no footer should be there
+
 export default function Address(){
 
     const options=[
@@ -120,15 +122,19 @@ export default function Address(){
 
             {/* address sidebar */}
 
-            <div className="flex flex-col h-screen w-[400px] ">
+            {/* <div className="flex flex-col h-screen w-[400px] "> */}
 
-                <div className="flex w-[400px] h-[57px]">
+                {/* <div className="flex w-[400px] h-[57px]">
                     <img className="size-6" src="" alt="" />
                     <p className="h-6 text-[20px]">Add New Address</p>
 
-                </div>
+                </div> */}
 
-                <div className="w-[322px] h-[822px]">
+
+                {/* wrapper div */}
+                {/* <div className="w-[400px] h-auto pt-0 p-9.5">
+
+                    <div className="w-[322px] h-[822px]">
                     <div className="w-[322px] h-[24px] my-6"> Address </div>
                     <div className="flex flex-col justify-around w-[322px] h-[324px] text-[#707072]">
                         {addressInfo.map((item,index)=>
@@ -144,8 +150,8 @@ export default function Address(){
                     <div className="w-[322px] h-[24px] my-4">
                         <p>Use as default Address</p>
                         
-                        {/* toggle button */}
-                        <span></span>
+                        
+                        <span>Toggle Button</span>
 
                     </div>
 
@@ -159,14 +165,16 @@ export default function Address(){
                     </div>
 
                 </div>
+                </div> */}
 
                 {/* ship button */}
-                <div className="w-[392px] h-[82px] py-4 px-9">
+                {/* <div className="w-[392px] h-[82px] py-4 px-9">
                     <button className="w-[320px] h-[50px] p-3 bg-black text-white rounded-full">Ship to this Address</button>
 
-                </div>
+                </div> */}
 
-            </div>
+            {/* </div> */}
+            
         </div>
     )
 }
