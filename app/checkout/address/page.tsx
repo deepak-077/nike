@@ -1,6 +1,14 @@
+"use client"
+
+import { useRouter } from "next/navigation"
+
+
+
 // no navbar and no footer should be there
+// a loading icon when user presses deliver here
 
 export default function Address(){
+    const router=useRouter();
 
     const options=[
         {img:"/tick.png",
@@ -81,15 +89,15 @@ export default function Address(){
                 
                 {/* Add address */}
                 <div className="w-[748px] h-[274px]">
-                    <div className="flex w-[748px] h-[250px] mt-[24px]">
+                    <div className="flex justify-between w-[748px] h-[250px] mt-[24px]">
                         {/* address box */}
-                        <div className="flex flex-col justify-center items-center w-[366px] h-[236px] mb-[14px] p-6">
+                        <div className="flex flex-col justify-center items-center w-[366px] h-[236px] mb-[14px] p-6  border border-dashed border-[#E5E5E5] hover:bg-[#E5E5E5] hover:border-black rounded-2xl hover:cursor-pointer">
                             <img className="size-6" src="/plus.png" alt="" />
                             <p className="font-semibold">Add New Address</p>
                         </div>
 
                         {/* Saved Address */}
-                        <div className="flex flex-col w-[366px] h-[236px] mb-[14px] p-6 text-[#707072] border border-[#E5E5E5] rounded-2xl">
+                        <div className="flex flex-col w-[366px] h-[236px] mb-[14px] p-6 text-[#707072] hover:bg-[#E5E5E5] border border-[#E5E5E5] rounded-2xl">
                             {/* name */}
                             <div className="flex h-[26px]">
                                 <p className="font-semibold text-black">Name</p>
@@ -111,11 +119,13 @@ export default function Address(){
                                 {/* buttons */}
                             <div className="flex font-semibold mt-2.5">
                                 <div className="h-[48px] pr-3 text-black">
-                                    <button className="rounded-full border py-[11px] px-[21px]">Edit</button>
+                                    <button className="rounded-full border py-[11px] px-[21px] hover:cursor-pointer">Edit</button>
                                 </div>
 
-                                <div className="h-[48px] pr-3">
-                                    <button className="rounded-full border py-[11px] px-[21px] bg-black text-white">Deliver here</button>
+                                <div className="h-[48px]">
+                                    <button className="rounded-full border py-[11px] px-[21px] bg-black text-white hover:cursor-pointer" onClick={()=>{
+                                        router.push("/checkout/payment")
+                                    }}>Deliver here</button>
                                 </div>
 
                             </div>

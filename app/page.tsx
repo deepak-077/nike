@@ -10,10 +10,7 @@ export default function Home() {
   return (
     <div>
 
-      {/* signup and login */}
-      <div>
-
-      </div>
+      
       <Category/>
       <Things/>
 

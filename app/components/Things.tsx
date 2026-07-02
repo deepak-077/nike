@@ -121,12 +121,18 @@ export default function Things(){
           <div className=" grid grid-cols-3 w-[1122px] h-auto gap-3.5 ">
 
             {shoes.map((item,index)=>(
-            <div key={index} className="w-[366px] h-auto hover:cursor-pointer mb-12" onClick={()=>{
+            <div key={index} className="relative w-[366px] h-auto hover:cursor-pointer mb-12" onClick={()=>{
               router.push(item.route)
             }}>
             
-                {/* image */}
+                {/* shoe image */}
                 <img className="size-[366px]" src={item.img} alt="" />
+
+                {/* wishlist icon */}
+                <div className="absolute flex justify-center items-center  top-5 rounded-full bg-white right-5 size-10 p-1.5">
+                  <img className="size-6 " src="heart.png" alt="" />
+                </div>
+                
 
                 {/* name and details */}
                 <div className="flex flex-col justify-center w-[336px] pt-[12px] w-full h-[116px] gap-0.5">
@@ -143,7 +149,7 @@ export default function Things(){
                     </div>
                   )}
                   
-                  <div className="h-6 font-semibold" mt-2>{item.price}</div>
+                  <div className="h-6 font-semibold mt-2">{item.price}</div>
                 </div>
             </div>
           

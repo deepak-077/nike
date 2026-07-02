@@ -81,7 +81,7 @@ export default function Sidebar(){
 
                     {/* expand arrow */}
                     <div> 
-                        <img className="size-5" src="" alt="" />
+                        <img className="size-5 rotate-90" src="right.png" alt="" />
                     </div>
 
                 </div>

@@ -3,6 +3,9 @@
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation";
 
+
+// check here if the user is logged in when they click proceed to buy- ask phone nubmer
+
 export default function Checkout(){
     const [counter,setCounter] = useState(1)
     const router = useRouter();
@@ -40,8 +43,10 @@ export default function Checkout(){
                         <div className="flex w-[712px] h-[222px] mb-2">
 
 
-                            <div className="w-[164px] h-[222px] mb-2">
-                                <img className="size-[164px] border" src="" alt="" />
+                            <div className=" w-[164px] h-[222px] mb-2">
+                                
+                                {/* item image */}
+                                <img className="size-[164px]" src="/airmax/shoe1.jpg" alt="" />
                                 
                                 <div className="flex justify-between items-center w-[164px] h-[42px] mt-4">
                                     
@@ -150,7 +155,9 @@ export default function Checkout(){
 
                     {/* proceed to buy */}
                     <div className="w-[352px] h-[92px] px-3">
-                        <button className="w-[332px] h-[60px] px-1.5 py-[1px] bg-black text-white font-semibold rounded-full"> Proceed to Buy </button>
+                        <button className="w-[332px] h-[60px] px-1.5 py-[1px] bg-black text-white font-semibold rounded-full hover:cursor-pointer" onClick={()=>{
+                            router.push("/checkout/address")
+                        }}> Proceed to Buy </button>
 
 
                     </div>

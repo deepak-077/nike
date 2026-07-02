@@ -37,16 +37,17 @@ export default function More(){
         <div className="flex flex-col items-center justify-center w-[1470px] h-[626px] pl-12 mb-12">
             
             {/* title */}
-            <div className="flex justify-between w-full h-[48px] mb-3 ml-4">
+            <div className="flex justify-between w-[1398px] h-[48px] mb-3 ml-4">
                 <h1 className="text-[24px] font-medium">More From Men Lifestyle</h1>
-                <div className="w-[100px] h-[46px] mr-6">
+                <div className="flex justify-between w-[100px] h-[46px] mr-6">
                     
-                    <button className="size-[46px] px-[6px] py-[1px]">
-                        <img src="" alt="" />
+                    {/* slider arrows */}
+                    <button className="flex justify-center items-center border border-[#CACACB] rounded-full size-[46px] px-[6px] py-[1px]">
+                        <img className="size-6" src="/back.png" alt="" />
                     </button>
 
-                    <button className="size-[46px] px-[6px] py-[1px]">
-                        <img src="" alt="" />
+                    <button className=" flex justify-center items-center  border border-[#CACACB] rounded-full size-[46px] px-[6px] py-[1px]">
+                        <img className="size-6" src="/right.png" alt="" />
                     </button>
                 </div>
             </div>
@@ -55,12 +56,17 @@ export default function More(){
             {/* related shoes */}
             <div className="flex  w-[1438px] h-[566px]">
                 {moreShoes.map((item,index)=>(
-            <div key={index} className="w-[450px] h-auto hover:cursor-pointer" onClick={()=>{
+            <div key={index} className="relative w-[450px] h-auto hover:cursor-pointer" onClick={()=>{
               router.push(item.route)
             }}>
             
                 {/* image */}
                 <img className="size-[450px]" src={item.img} alt="" />
+
+                {/* wishlist icon */}
+                <div className="absolute flex justify-center items-center  top-5 rounded-full bg-white right-5 size-10 p-1.5">
+                  <img className="size-6 " src="/heart.png" alt="" />
+                </div>
 
                 {/* name and details */}
                 <div className="flex flex-col justify-center w-[450px] pt-[12px] w-full h-[116px] gap-0.5">
@@ -77,7 +83,7 @@ export default function More(){
                     </div>
                   )}
                   
-                  <div className="h-6 font-semibold" mt-2>{item.price}</div>
+                  <div className="h-6 font-semibold mt-2">{item.price}</div>
                 </div>
             </div>
           

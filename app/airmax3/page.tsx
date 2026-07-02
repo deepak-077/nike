@@ -2,6 +2,11 @@
 import { useEffect, useState } from "react"
 import More from "../components/More"
 import Recent from "../components/Recent"
+import { useRouter } from "next/navigation"
+
+
+// feature - on clicking add to bag- a popup should appear showing the item added to cart and
+// the screen should appear blur for about 3-4 seconds 
 
 const images=[
     {img:"shoe1.jpg"},
@@ -25,6 +30,8 @@ const sizes=[
 
 
 export default function Airmax3(){
+    const router = useRouter();
+
     const [selectedImg,setSelectedImg]=useState("")
 
     useEffect(()=>{
@@ -96,7 +103,7 @@ export default function Airmax3(){
                             <div className="flex justify-between w-full h-[26px] font-semibold">
                                 <h2>Select Size</h2>
                                 <div className="flex items-center gap-1 h-[24px]">
-                                    <img className="size-6" src="" alt="" />
+                                    <img className="size-6" src="measure.png" alt="" />
                                     <span className="text-sm">Size Guide</span>
                                 </div>
                             </div>
@@ -104,18 +111,20 @@ export default function Airmax3(){
                             {/* sizes */}
                             <div className="flex flex-wrap justify-between items-center w-[350px] h-[103px] mt-2">
                                 {sizes.map((item,index)=>(
-                                    <label className="border border-[#CACACB] rounded-lg w-[82.25] h-[48px] px-2 text-center">{item.size}</label>
+                                    <label className="flex items-center justify-center hover:cursor-pointer border border-[#CACACB] rounded-lg w-[82.25] h-[48px] px-2">{item.size}</label>
                                 ))}
                             </div>
                         </div>
 
                         {/* add to bag */}
                             <div className="w-[350px] h-[130px]">
-                                <button className="bg-black text-white rounded-4xl font-semibold w-full h-[60px] mb-3 py-1">Add to Bag</button>
+                                <button className="bg-black text-white rounded-4xl font-semibold w-full h-[60px] mb-3 py-1 hover:cursor-pointer" onClick={()=>{
+                                    router.push("/checkout")
+                                }}>Add to Bag</button>
                                 
-                                <div className="flex gap-1 items-center justify-center rounded-4xl w-[350px] h-[58px] border border-[#00132529]">
+                                <div className="flex gap-1 items-center justify-center rounded-4xl w-[350px] h-[58px] border border-[#00132529] hover:cursor-pointer">
                                     <span className="h-6 font-semibold">Favourite</span>
-                                    <img className="size-6" src="" alt="" />
+                                    <img className="size-6" src="heart.png" alt="" />
                                 </div>
 
                             </div>
