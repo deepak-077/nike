@@ -1,8 +1,12 @@
 // no navbar and no footer should be there
 
-export default function Payment(){
+"use client"
 
-    const options=[
+import axios from "axios"
+import Script from "next/script";
+import { useRouter } from "next/navigation";
+
+const options=[
         {img:"/tick.png",
          title: "Sign Up"
         },
@@ -55,8 +59,106 @@ export default function Payment(){
 
     ]
 
+    
+
+export default function Payment(){
+    const router=useRouter();
+
+    const shoe = {
+        amount :"17000",
+        currency: "INR",
+        receipt:" orderreceipt_id_11"
+    }
+
+    
+    async function handlePayment(){
+        try{
+            const response = await axios.post("http://localhost:3001/create_order",shoe)
+            const orderData=response.data
+
+
+            // Razorpay Checkout - documentation
+      const options = {
+        key: process.env.NEXT_PUBLIC_KEY_ID, //  Razorpay key_id
+        amount: orderData.amount, 
+        currency: orderData.currency,
+        name: 'Nike',
+        description: 'Test Transaction',
+        order_id: orderData.id, // This is the order_id created in the backend
+
+        "handler": async function (response){
+            try{
+                const verification_items={
+                   razorpay_payment_id:response.razorpay_payment_id,
+                   razorpay_order_id:response.razorpay_order_id,
+                   razorpay_signature:response.razorpay_signature
+                };
+
+
+
+        const verify= await axios.post("http://localhost:3001/verify_payment",{verification_items})
+        
+        if(verify.status===200){
+            console.log("payment verification successful")
+            router.push("/payment-success")
+        }
+
+            }
+            catch(error){
+                console.log("payment verification failed")
+                router.push("/payment-failed")
+            }
+
+    },
+        prefill: {
+          name: 'Gaurav Kumar',
+          email: 'gaurav.kumar@example.com',
+          contact: '9999999999'
+        },
+        theme: {
+          color: '#F37254'
+        },
+      };
+
+    //     var settings = {
+    // "url": "/api/payment/verify",
+    // "method": "POST",
+    // "timeout": 0,
+    // "headers": {
+    // "Content-Type": "application/json"
+    // },
+    // "data": JSON.stringify({response}),
+    // }
+
+      const rzp = new (window as any).Razorpay(options);
+
+      rzp.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+    });
+
+        rzp.open();
+
+        }
+        catch(error){
+            console.log(error)
+        }
+        
+    }
+    
+
     return(
         <div className="flex flex-col items-center justify-center">
+
+            <Script 
+          src="https://checkout.razorpay.com/v1/checkout.js" 
+          strategy="lazyOnload" 
+        />
             {/* navbar */}
             <nav className="flex justify-around w-[1470px] h-[65px] p-4">
                 <div className="flex items-center w-[130px] h-[32px] pr-4 pl-12">
@@ -168,7 +270,9 @@ export default function Payment(){
                                                 </div>
 
                                             </div>
-                                            <button className="w-full h-12 p-2.5 text-white bg-black rounded-full">Scan & Pay ₹17,495 </button>
+
+                                            {/* payment button */}
+                                            <button className="w-full h-12 p-2.5 text-white bg-black rounded-full hover:cursor-pointer" onClick={ handlePayment }>Scan & Pay ₹17,495 </button>
 
 
 
